@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <link rel="stylesheet" href="decorado.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+
+
+
+</head>
+<body>
+  <div id="splash-screen">
+  <div class="logo-container">
+    <!-- Puedes poner tu logo aquí -->
+<img src="ventasva.png" alt="Logo" class="logopi" />
+    <p class="mensaje"></p>
+  </div>
+</div>
+
+
+
+<div class="carousel">
+
+    <img src="banner1.png" class="slide active">
+    <img src="banner2.png" class="slide">
+    <img src="banner3.png" class="slide">
+    
+</div>
+<header>
+    <p>ventas amanecer</p>
+    <div class="logo">
+        <img src="logova.png" alt="logo de la empresa">
+        <img class="pngo" src="ventasmenu.png">
+    </div>
+
+   
+  <div class="hamburguesa" id="btn-menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+
+
+        
+  
+  
+  <nav id="menu-nav">
+        
+       
+      
+
+        <a href="https://tupperware.ipapercms.dk/Tupperware/Mexico/catalogo_tupperware/tuppertips/vigente/" target="_blank">Tupper Tips</a>
+         <a href="catalogos.html">Catálogos</a>
+        <a href="https://soytupperware2.web.app/login" target="_blank"> Soy Tupperware 2.0</a>
+        <a href="https://www.facebook.com/TWMatamorosAmanecer/" target="_blank">Facebook</a>
+      
+    
+
+     </nav>
+    
+
+    </header>
+
+
+
+
+ 
+
+
+<div class="fotofondo">
+
+<h1 class="soytupperware">
+  <a href="https://soytupperware2.web.app/login" target="_blank">Soy Tupperware 2.0</a>
+</h1>
+
+
+
+
+
+ <h2 class="introsoytupperware" > Aprende a instalar soy Tupperware y descubre las ventajas de capturar tus pedidos. </h2>
+
+<!-- Aquí va el video embebido de Facebook -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0"></script>
+
+  <div class="fb-video" data-href="https://www.facebook.com/TWMatamorosAmanecer/videos/2441476862889461"
+    data-width="360" data-show-text="false">
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="fotofondo-2">
+
+<img  class="esther" src="esther hermoso.png" alt="">
+
+<p class="testimonio"> Hay momentos en la vida en los que sentimos que necesitamos algo más. No hablo solo de ingresos, sino de propósito, de reconocimiento, de libertad… y sobre todo, de creer en nosotras mismas. Yo también estuve ahí. Y hoy, como Directora Comercial de Tupperware, te quiero decir algo con el corazón en la mano: esta puede ser una de las mejores decisiones de tu vida.
+Ser parte de Tupperware no es solo vender productos —es abrir una puerta a tu independencia, a tu crecimiento personal, a un estilo de vida en el que tú decides hasta dónde llegar. Aquí no importa tu edad, tu pasado o tu experiencia. Lo único que necesitas es tomar la decisión de creer en ti.
+He visto a mujeres que comenzaron tímidas, llenas de dudas, y que hoy sostienen a sus familias, se compraron su carro, tienen su casa, viajan, dirigen equipos… ¡y brillan! Porque cuando una mujer toma las riendas de su futuro, nada la detiene.
+Tupperware empodera porque te da las herramientas, el respaldo, el acompañamiento y sobre todo, una comunidad que te impulsa. Aquí celebramos tus logros, te reconocemos, y siempre hay alguien que te va a tomar de la mano cuando sientas que flaqueas.
+Este no es un trabajo. Es una transformación. Una forma de vida en la que redescubres tu valor, tu voz y tu capacidad de lograr lo que te propongas.
+Si estás leyendo esto, no es casualidad. Es una señal. Atrévete. Da el primer paso. No tienes que hacerlo sola —nosotras te acompañamos.
+Porque si algo te puedo asegurar es esto:
+la mujer que toma esta decisión, no vuelve a ser la misma. Vuelve más fuerte, más segura, y más feliz.</p>
+
+
+
+
+
+
+
+  </div>
+
+
+<div class="fotofondo-1">
+
+ 
+   
+<h2 class="contacto">Contáctanos</h2>
+
+<form id="contactForm">
+  <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required />
+  <input type="tel" name="telefono" id="telefono" placeholder="Celular" required pattern="\d{10}" maxlength="10" title="El número debe tener exactamente 10 dígitos" inputmode="numeric" />
+  <textarea class="mensaje" name="mensaje" id="mensaje" rows="3" placeholder="¿Qué es lo primero que piensas cuando escuchas 'Tupperware'?"></textarea>
+  <button type="submit">Enviar</button>
+</form>
+
+<div id="response"></div>
+
+<!-- Al inicio está oculto -->
+<a id="whatsapp-link" href="#" target="_blank" style="display:none; margin-top: 10px;">
+  💬 Contactar por WhatsApp
+
+</a>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const responseDiv = document.getElementById('response');
+  const whatsappLink = document.getElementById('whatsapp-link');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obtener valores del formulario
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    // Validar teléfono (10 dígitos numéricos)
+    const telRegex = /^\d{10}$/;
+    if (!telRegex.test(telefono)) {
+      responseDiv.textContent = "Por favor ingresa un número de celular válido de 10 dígitos.";
+      whatsappLink.style.display = "none";
+      return;
+    }
+
+    // Mensaje personalizado que aparecerá en WhatsApp
+    let textoWhats = `Hola, soy ${nombre}. `;
+    if(mensaje.length > 0){
+      textoWhats += `Esto es lo que pienso sobre Tupperware: "${mensaje}". `;
+    }
+    textoWhats += `Me gustaría recibir más información. Mi celular es ${telefono}.`;
+
+    // Actualizar texto y link de WhatsApp
+    responseDiv.textContent = `¡Gracias por contactarnos, ${nombre}! Da clic en el botón para enviarnos tu mensaje por WhatsApp.`;
+    whatsappLink.href = `https://wa.me/52${8681994848}?text=${encodeURIComponent(textoWhats)}`;
+    whatsappLink.style.display = "inline-block";
+
+    // Limpiar formulario si quieres (opcional)
+    // form.reset();
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+  const btnMenu = document.getElementById('btn-menu');
+  const nav = document.getElementById('menu-nav');
+
+  btnMenu.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+
+
+<script>
+  const splash = document.getElementById('splash-screen');
+  splash.addEventListener('animationend', () => {
+    splash.style.display = 'none';
+  });
+</script>
+
+
+</body>
+</html>
+
